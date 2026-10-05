@@ -34,7 +34,7 @@ export async function GET(request: Request) {
             height: "220px",
             objectFit: "cover",
             borderRadius: "100%",
-            border: "6px solid #22d3ee",
+            border: "6px solid #3b82f6",
           }}
         />
         <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
@@ -47,7 +47,7 @@ export async function GET(request: Request) {
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-        <div style={{ display: "flex", width: "120px", height: "8px", borderRadius: "8px", background: "#22d3ee" }} />
+        <div style={{ display: "flex", width: "120px", height: "8px", borderRadius: "8px", background: "#3b82f6" }} />
         <span style={{ fontSize: "46px", lineHeight: "58px", maxWidth: "1000px" }}>
           {extra || "Building AI agents and cloud infrastructure."}
         </span>

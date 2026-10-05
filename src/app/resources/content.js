@@ -7,7 +7,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Software Engineer",
-  avatar: "/images/avatar-v2.jpg",
+  avatar: "/images/avatar-v3.jpg",
   email: "gurnaindeepsingh@hotmail.com",
   location: "America/Vancouver", // IANA time zone identifier, used for the clock only
   locationLabel: "Vancouver, BC", // what visitors actually read
@@ -135,15 +135,7 @@ const about = {
             aligned across the team.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/work/aws/amazon_web_services_logo.jpg",
-            alt: "Amazon Web Services",
-            width: 9,
-            height: 7,
-          },
-        ],
+        images: [],
       },
       {
         company: "Amazon Web Services (AWS)",
@@ -186,14 +178,7 @@ const about = {
             doing ML 10x easier compared to coding solutions.
           </>,
         ],
-        images: [
-          {
-            src: "/images/work/amd/amd_logo.jpg",
-            alt: "Advanced Micro Devices",
-            width: 9,
-            height: 7,
-          },
-        ],
+        images: [],
       },
       {
         company: "Catalytics Inc.",
@@ -266,14 +251,7 @@ const about = {
           </>
         ),
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/fixit/cover-01.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         title: "Speech-Assist",
@@ -287,14 +265,7 @@ const about = {
           </>
         ),
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/speech-assist/cover-01.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         title: "Test Your Reaction!",
@@ -306,14 +277,7 @@ const about = {
           </>
         ),
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/reaction-game/cover-01.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },
