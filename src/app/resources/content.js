@@ -9,7 +9,8 @@ const person = {
   role: "Software Engineer",
   avatar: "/images/avatar.jpg",
   email: "gurnaindeepsingh@gmail.com",
-  location: "America/Vancouver", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "America/Vancouver", // IANA time zone identifier, used for the clock only
+  locationLabel: "Vancouver, BC", // what visitors actually read
   languages: ["English", "Punjabi", "Hindi"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -55,25 +56,16 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Software engineer building AI agents and cloud infrastructure</>,
   featured: {
-    display: true,
-    title: (
-      <>
-        Recent project: <strong className="ml-4">Once UI</strong>
-      </>
-    ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    display: false,
+    title: <></>,
+    href: "/about",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        icon={false}
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm {person.firstName}, a {person.role} at Amazon Web Services in
+      Vancouver.
     </>
   ),
 };
@@ -82,7 +74,7 @@ const about = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `${person.name} is a ${person.role} at Amazon Web Services in ${person.locationLabel}, building AI agents and cloud infrastructure.`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -92,17 +84,19 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://calendly.com/gurnaindeepsingh/30min?share_attribution=expiring_link",
+    link: "https://calendly.com/gurnaindeepsingh/30min",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        I’m currently working as a Software Development Engineer at Amazon Web
-        Services. I have a knack for developing high-quality software solutions
-        and have specialized skills in cloud computing and architecture design,
-        particularly on the AWS platform.
+        I'm a Software Development Engineer at Amazon Web Services in
+        Vancouver. Right now I build autonomous AI agents for internal teams,
+        along with the evaluation harnesses that tell us whether they can be
+        trusted. Before that I worked on autoscaling and on the infrastructure
+        behind AWS software migration tools. I like owning a service from the
+        design document through to production.
       </>
     ),
   },
@@ -116,20 +110,23 @@ const about = {
         role: "Software Development Engineer II",
         achievements: [
           <>
-            Develop cutting-edge solutions in the unexplored areas of
-            autoscaling, enhancing cost efficiency and scalability.
+            Develop reliable autonomous AI agents for internal teams using the
+            AWS Strands and LangChain frameworks.
           </>,
           <>
-            Produce clear and detailed design documents to streamline
-            development processes and ensure project alignment.
+            Build validation and evaluation harnesses for agentic workflows.
           </>,
           <>
-            Full ownership of services from conception to deployment, ensuring
-            high-quality and reliable deliverables.
+            Manage scalable internal infrastructure for software migration
+            tools using TypeScript, Python and the CDK framework.
           </>,
           <>
-            Contribute to establishing leading industry standards in software
-            solutions for enterprise applications built on AWS.
+            Earlier, built autoscaling features focused on cost efficiency and
+            scalability, owning services from design to deployment.
+          </>,
+          <>
+            Write clear, detailed design documents that keep development
+            aligned across the team.
           </>,
         ],
         images: [
@@ -144,7 +141,7 @@ const about = {
       },
       {
         company: "Amazon Web Services (AWS)",
-        timeframe: "2020 - 2020",
+        timeframe: "May 2020 - Sep 2020",
         role: "Software Development Engineer Intern",
         achievements: [
           <>
@@ -186,7 +183,7 @@ const about = {
         images: [
           {
             src: "/images/work/amd/amd_logo.jpg",
-            alt: "Amazon Web Services",
+            alt: "Advanced Micro Devices",
             width: 9,
             height: 7,
           },
@@ -194,7 +191,7 @@ const about = {
       },
       {
         company: "Catalytics Inc.",
-        timeframe: "2018 - 2018",
+        timeframe: "2018",
         role: "Jr. Health Data Scientist",
         achievements: [
           <>
@@ -226,7 +223,8 @@ const about = {
         name: "McMaster University",
         description: (
           <>
-            (B.Eng.) Bachelor's degree, Software Engineering (Embedded Systems)
+            B.Eng., Software and Embedded Systems Engineering. Graduated April
+            2021, GPA 3.9 / 4.0.
           </>
         ),
       },
@@ -236,6 +234,19 @@ const about = {
     display: true, // set to false to hide this section
     title: "Projects",
     skills: [
+      {
+        title: "ScreenIt",
+        description: (
+          <>
+            A contactless customer screening and contact tracing system for
+            businesses. An offline embedded temperature screener and entry
+            processor is managed through a web app that tracks how many
+            customers are inside, and an image processing and machine learning
+            subsystem checks for a mask before screening starts.
+          </>
+        ),
+        images: [],
+      },
       {
         title: "FixIt",
         description: (
@@ -260,8 +271,10 @@ const about = {
         title: "Speech-Assist",
         description: (
           <>
-            Speech-Assist is a predictive text-to-speech keyboard application
-            that helps users with speech impairment to communicate with others.
+            A predictive text-to-speech keyboard that helps people with speech
+            impairment communicate. It suggests the next three words as you
+            type, has one-click greetings and yes/no, and reads the sentence
+            out loud. Third place at the McMaster Engineering Competition, 2018.
           </>
         ),
         // optional: leave the array empty if you don't want to display images
@@ -296,10 +309,32 @@ const about = {
   },
 };
 
+const skills = {
+  display: true,
+  title: "Skills",
+  groups: [
+    { label: "Languages", items: ["Python", "TypeScript", "Java", "JavaScript", "Ruby", "C", "C++"] },
+    { label: "AI and agents", items: ["AWS Strands", "LangChain", "Agent evaluation harnesses", "Machine learning"] },
+    { label: "Cloud and infrastructure", items: ["AWS", "CDK", "Linux"] },
+    { label: "Web and data", items: ["React", "Redux", "Node.js", "FastAPI", "MySQL"] },
+    { label: "Tools", items: ["Git", "GitHub", "GitLab", "JIRA"] },
+  ],
+};
+
+const awards = {
+  display: true,
+  title: "Honours",
+  items: [
+    { year: "2018", text: "Third place, McMaster Engineering Competition, for a predictive text keyboard built with AI." },
+    { year: "2017", text: "Provost's Honour Roll Medal, McMaster University." },
+    { year: "2017", text: "Anna Marie Hibbard Scholarship, for a 4.0 GPA in first year." },
+  ],
+};
+
 const blog = {
   path: "/blog",
   label: "Blog",
-  title: "Coming soon...",
+  title: `Writing – ${person.name}`,
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -365,4 +400,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, skills, awards };

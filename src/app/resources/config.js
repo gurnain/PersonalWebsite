@@ -1,11 +1,11 @@
-// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://personal-website-3c3.pages.dev";
+// Used for SEO in meta tags, schema, sitemap and link previews. Include the protocol.
+const baseURL = "https://gurnain.squre.org";
 
 const routes = {
   "/": false,
   "/about": true,
   "/work": false,
-  "/blog": true,
+  "/blog": false, // hidden until there is a post; a "coming soon" page hurts more than no page
   "/gallery": false,
 };
 

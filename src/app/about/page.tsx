@@ -13,7 +13,7 @@ import {
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
-import { person, about, social } from "@/app/resources/content";
+import { person, about, social, skills, awards } from "@/app/resources/content";
 import React from "react";
 import { Meta, Schema } from "@/once-ui/modules";
 
@@ -49,6 +49,8 @@ export default function About() {
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
     },
+    { title: skills.title, display: skills.display, items: [] },
+    { title: awards.title, display: awards.display, items: [] },
   ];
   return (
     <Column maxWidth="m">
@@ -92,7 +94,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Flex gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              {person.locationLabel}
             </Flex>
             {person.languages.length > 0 && (
               <Flex wrap gap="8">
@@ -310,6 +312,48 @@ export default function About() {
                       </Flex>
                     )}
                   </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {skills.display && (
+            <>
+              <Heading as="h2" id={skills.title} variant="display-strong-s" marginTop="40" marginBottom="m">
+                {skills.title}
+              </Heading>
+              <Column fillWidth gap="16" marginBottom="40">
+                {skills.groups.map((group) => (
+                  <Flex key={group.label} fillWidth gap="12" vertical="center" wrap>
+                    <Text variant="body-default-s" onBackground="neutral-weak" style={{ minWidth: "11rem" }}>
+                      {group.label}
+                    </Text>
+                    <Flex gap="8" wrap style={{ flex: 1, minWidth: "14rem" }}>
+                      {group.items.map((item) => (
+                        <Tag key={item} size="l">
+                          {item}
+                        </Tag>
+                      ))}
+                    </Flex>
+                  </Flex>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {awards.display && (
+            <>
+              <Heading as="h2" id={awards.title} variant="display-strong-s" marginBottom="m">
+                {awards.title}
+              </Heading>
+              <Column fillWidth gap="12">
+                {awards.items.map((award) => (
+                  <Flex key={award.text} fillWidth gap="16">
+                    <Text variant="heading-default-xs" onBackground="neutral-weak" style={{ minWidth: "3rem" }}>
+                      {award.year}
+                    </Text>
+                    <Text variant="body-default-m">{award.text}</Text>
+                  </Flex>
                 ))}
               </Column>
             </>
