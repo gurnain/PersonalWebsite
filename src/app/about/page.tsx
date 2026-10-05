@@ -281,26 +281,37 @@ export default function About() {
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text variant="heading-strong-l">{skill.title}</Text>
+                    <Flex fillWidth horizontal="space-between" vertical="center" gap="12">
+                      {/* @ts-ignore: links is optional per project */}
+                      {skill.links && skill.links.length > 0 ? (
+                        // @ts-ignore
+                        <a href={skill.links[skill.links.length - 1].href} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                          <Text variant="heading-strong-l">{skill.title}</Text>
+                        </a>
+                      ) : (
+                        <Text variant="heading-strong-l">{skill.title}</Text>
+                      )}
+                      {/* @ts-ignore */}
+                      {skill.links && skill.links.length > 0 && (
+                        <Flex gap="8" data-border="rounded">
+                          {/* @ts-ignore */}
+                          {skill.links.map((link) => (
+                            <IconButton
+                              key={link.href}
+                              href={link.href}
+                              icon={link.icon}
+                              tooltip={link.label}
+                              aria-label={`${skill.title}: ${link.label}`}
+                              size="m"
+                              variant="secondary"
+                            />
+                          ))}
+                        </Flex>
+                      )}
+                    </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {skill.description}
                     </Text>
-                    {/* @ts-ignore: links is optional per project */}
-                    {skill.links && skill.links.length > 0 && (
-                      <Flex gap="8" wrap paddingTop="8" data-border="rounded">
-                        {/* @ts-ignore */}
-                        {skill.links.map((link) => (
-                          <Button
-                            key={link.href}
-                            href={link.href}
-                            prefixIcon={link.icon}
-                            label={link.label}
-                            size="s"
-                            variant="secondary"
-                          />
-                        ))}
-                      </Flex>
-                    )}
                     {skill.images && skill.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" gap="12" wrap>
                         {skill.images.map((image, index) => (
