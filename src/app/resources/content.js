@@ -107,7 +107,7 @@ const about = {
       {
         company: "Amazon Web Services (AWS)",
         timeframe: "2021 - Present",
-        role: "Software Development Engineer II",
+        role: "Software Development Engineer",
         achievements: [
           <>
             Develop reliable autonomous AI agents for internal teams using the
