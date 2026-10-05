@@ -274,6 +274,22 @@ export default function About() {
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {skill.description}
                     </Text>
+                    {/* @ts-ignore: links is optional per project */}
+                    {skill.links && skill.links.length > 0 && (
+                      <Flex gap="8" wrap paddingTop="8" data-border="rounded">
+                        {/* @ts-ignore */}
+                        {skill.links.map((link) => (
+                          <Button
+                            key={link.href}
+                            href={link.href}
+                            prefixIcon={link.icon}
+                            label={link.label}
+                            size="s"
+                            variant="secondary"
+                          />
+                        ))}
+                      </Flex>
+                    )}
                     {skill.images && skill.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" gap="12" wrap>
                         {skill.images.map((image, index) => (

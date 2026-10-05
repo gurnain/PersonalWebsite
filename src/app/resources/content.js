@@ -255,6 +255,7 @@ const about = {
       },
       {
         title: "FixIt",
+        links: [{ label: "View on GitHub", icon: "github", href: "https://github.com/gurnain/FixIt" }],
         description: (
           <>
             Terminal based python application that identifies incorrect terminal
@@ -295,6 +296,7 @@ const about = {
       },
       {
         title: "Test Your Reaction!",
+        links: [{ label: "Play it", icon: "arrowUpRight", href: "https://gurnain.github.io/" }, { label: "View on GitHub", icon: "github", href: "https://github.com/gurnain/gurnain.github.io" }],
         description: (
           <>
             A reaction game created in native JavaScript, HTML and CSS. Time
