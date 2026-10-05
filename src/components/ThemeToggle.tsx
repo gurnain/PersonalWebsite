@@ -1,19 +1,32 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { ToggleButton, useTheme } from '@/once-ui/components';
+import { useEffect, useState } from "react";
+import { Icon } from "./Icon";
 
-export const ThemeToggle: React.FC = () => {
-  const { theme, setTheme } = useTheme();
-  
+export function ThemeToggle({ className }: { className?: string }) {
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    setDark(document.documentElement.getAttribute("data-theme") === "dark");
+  }, []);
+
+  const flip = () => {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.setAttribute("data-theme", next ? "dark" : "light");
+    try {
+      localStorage.setItem("theme", next ? "dark" : "light");
+    } catch {}
+  };
+
   return (
-    <>
-      <ToggleButton
-        prefixIcon={theme === 'dark' ? 'sun' : 'moon'}
-        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        selected={false}
-        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-      />
-    </>
+    <button
+      type="button"
+      className={className}
+      onClick={flip}
+      aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
+    >
+      <Icon name={dark ? "sun" : "moon"} size={18} />
+    </button>
   );
-};
+}

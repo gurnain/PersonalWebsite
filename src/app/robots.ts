@@ -1,12 +1,6 @@
-import { baseURL } from "@/app/resources";
+import type { MetadataRoute } from "next";
+import { site } from "@/content";
 
-export default function robots() {
-  return {
-    rules: [
-      {
-        userAgent: "*",
-      },
-    ],
-    sitemap: `${baseURL}/sitemap.xml`,
-  };
+export default function robots(): MetadataRoute.Robots {
+  return { rules: [{ userAgent: "*", allow: "/" }], sitemap: `${site.url}/sitemap.xml` };
 }

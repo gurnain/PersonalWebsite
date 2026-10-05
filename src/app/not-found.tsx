@@ -1,15 +1,15 @@
-import { Column, Heading, Text } from "@/once-ui/components";
+import { site } from "@/content";
 
 export default function NotFound() {
   return (
-    <Column as="section" fill center paddingBottom="160">
-      <Text marginBottom="s" variant="display-strong-xl">
-        404
-      </Text>
-      <Heading marginBottom="l" variant="display-default-xs">
-        Page Not Found
-      </Heading>
-      <Text onBackground="neutral-weak">The page you are looking for does not exist.</Text>
-    </Column>
+    <main style={{ minHeight: "100vh", display: "grid", placeItems: "center", textAlign: "center", padding: 24 }}>
+      <div>
+        <h1 style={{ fontSize: 64, lineHeight: 1, fontWeight: 600, letterSpacing: "-0.04em" }}>404</h1>
+        <p style={{ margin: "16px 0 24px", color: "var(--text-soft)" }}>This page does not exist.</p>
+        <a href={site.path} style={{ color: "var(--accent)" }}>
+          Go to the About page
+        </a>
+      </div>
+    </main>
   );
 }
