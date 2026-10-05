@@ -97,8 +97,8 @@ const about = {
         solutions that improve cost efficiency and scalability, with full
         ownership of services from conception to deployment. Today I develop
         autonomous AI agents for internal teams, the evaluation harnesses that
-        validate them, and the infrastructure behind our software migration
-        tools.
+        validate them, and the infrastructure behind internal core software
+        migration tools.
       </>
     ),
   },
