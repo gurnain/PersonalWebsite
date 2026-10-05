@@ -92,11 +92,13 @@ const about = {
     description: (
       <>
         I'm a Software Development Engineer at Amazon Web Services in
-        Vancouver. Right now I build autonomous AI agents for internal teams,
-        along with the evaluation harnesses that tell us whether they can be
-        trusted. Before that I worked on autoscaling and on the infrastructure
-        behind AWS software migration tools. I like owning a service from the
-        design document through to production.
+        Vancouver, with specialized skills in cloud computing and architecture
+        design on the AWS platform. Since 2021 I have built autoscaling
+        solutions that improve cost efficiency and scalability, with full
+        ownership of services from conception to deployment. Today I develop
+        autonomous AI agents for internal teams, the evaluation harnesses that
+        validate them, and the infrastructure behind our software migration
+        tools.
       </>
     ),
   },
@@ -106,7 +108,7 @@ const about = {
     experiences: [
       {
         company: "Amazon Web Services (AWS)",
-        timeframe: "2021 - Present",
+        timeframe: "Aug 2021 - Present",
         role: "Software Development Engineer",
         achievements: [
           <>
@@ -121,8 +123,12 @@ const about = {
             tools using TypeScript, Python and the CDK framework.
           </>,
           <>
-            Earlier, built autoscaling features focused on cost efficiency and
-            scalability, owning services from design to deployment.
+            Developed solutions in unexplored areas of autoscaling, improving
+            cost efficiency and scalability.
+          </>,
+          <>
+            Took full ownership of services from conception to deployment,
+            delivering reliable, high-quality software.
           </>,
           <>
             Write clear, detailed design documents that keep development
@@ -157,7 +163,7 @@ const about = {
       },
       {
         company: "Advanced Micro Devices (AMD)",
-        timeframe: "2019 - 2020",
+        timeframe: "May 2019 - Apr 2020",
         role: "Software Developer and Machine Learning Intern",
         achievements: [
           <>
@@ -191,7 +197,7 @@ const about = {
       },
       {
         company: "Catalytics Inc.",
-        timeframe: "2018",
+        timeframe: "May 2018 - Aug 2018",
         role: "Jr. Health Data Scientist",
         achievements: [
           <>
@@ -315,7 +321,7 @@ const skills = {
   groups: [
     { label: "Languages", items: ["Python", "TypeScript", "Java", "JavaScript", "Ruby", "C", "C++"] },
     { label: "AI and agents", items: ["AWS Strands", "LangChain", "Agent evaluation harnesses", "Machine learning"] },
-    { label: "Cloud and infrastructure", items: ["AWS", "CDK", "Linux"] },
+    { label: "Cloud and architecture", items: ["AWS", "Cloud architecture design", "Autoscaling", "CDK", "Linux"] },
     { label: "Web and data", items: ["React", "Redux", "Node.js", "FastAPI", "MySQL"] },
     { label: "Tools", items: ["Git", "GitHub", "GitLab", "JIRA"] },
   ],
