@@ -242,6 +242,7 @@ const about = {
     skills: [
       {
         title: "ScreenIt",
+        links: [{ label: "View on GitHub", icon: "github", href: "https://github.com/ScreenIt-Inc/ScreenIt" }],
         description: (
           <>
             A contactless customer screening and contact tracing system for
@@ -276,6 +277,7 @@ const about = {
       },
       {
         title: "Speech-Assist",
+        links: [{ label: "View on GitHub", icon: "github", href: "https://github.com/tasmainian/Speech-Assist" }],
         description: (
           <>
             A predictive text-to-speech keyboard that helps people with speech
