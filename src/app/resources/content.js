@@ -158,7 +158,7 @@ const about = {
       {
         company: "Advanced Micro Devices (AMD)",
         timeframe: "2019 - 2020",
-        role: "Software Engineer Intern",
+        role: "Software Developer and Machine Learning Intern",
         achievements: [
           <>
             Handled full-stack development (using React and Java) of an
