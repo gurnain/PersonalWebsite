@@ -8,7 +8,7 @@ const person = {
   },
   role: "Software Engineer",
   avatar: "/images/avatar.jpg",
-  email: "gurnaindeepsingh@gmail.com",
+  email: "gurnaindeepsingh@hotmail.com",
   location: "America/Vancouver", // IANA time zone identifier, used for the clock only
   locationLabel: "Vancouver, BC", // what visitors actually read
   languages: ["English", "Punjabi", "Hindi"], // optional: Leave the array empty if you don't want to display languages
