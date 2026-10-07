@@ -6,6 +6,8 @@ Source for https://gurnain.squre.org. A single About page built with Next.js.
 - The page is `src/app/about/page.tsx`, styled by `about.module.css` next to it.
 - Colours for light and dark themes are in `src/app/globals.css`.
 
+Requires Node 18.18 or newer.
+
 ```bash
 npm install
 npm run dev
